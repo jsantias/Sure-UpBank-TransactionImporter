@@ -67,6 +67,9 @@ tmp/
 # DB files
 tmp/*
 
+# Transaction import tracking
+BankAPICollect/imported_ids.json
+
 # parcel-bundler cache (https://parceljs.org/)
 .cache
 

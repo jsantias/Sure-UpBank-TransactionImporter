@@ -1,17 +1,15 @@
-FROM node:20.19.2
-
-RUN apt-get update && apt-get install -y \
-  python3 \
-  make \
-  g++ \
-  && rm -rf /var/lib/apt/lists/*
+FROM node:20.19.2-slim
 
 WORKDIR /app
 
 COPY BankAPICollect/package*.json ./
 
-RUN npm install --build-from-source
+RUN npm install
 
 COPY BankAPICollect/ ./
+
+RUN mkdir -p /data
+
+VOLUME /data
 
 CMD ["node", "update.js"]

@@ -3,16 +3,26 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "func start",
+    "start": "node update.js",
+    "setup": "node setup.js",
+    "startup": "node startup.js",
+    "build-cache": "node scripts/build_cache.js",
+    "build-cache:update": "node scripts/build_cache.js --update",
+    "set-opening-balances": "node scripts/set_opening_balances.js",
+    "diagnose": "node scripts/diagnose.js",
+    "diagnose:detail": "node scripts/diagnose.js --detail",
+    "reconcile": "node scripts/reconcile_check.js",
+    "find-phantoms": "node scripts/find_phantoms.js",
+    "find-phantoms:delete": "node scripts/find_phantoms.js --delete",
+    "flush-balances": "node scripts/flush_balances.js",
+    "fix-balance": "node scripts/fix_display_balance.js",
+    "delete-account": "node scripts/delete_account_transactions.js",
+    "delete-all": "node scripts/delete_all_transactions.js",
     "test": "echo \"No tests yet...\""
   },
   "dependencies": {
-    "@actual-app/api": "^26.2.0",
-    "@azure/functions": "^4.0.0",
     "axios": "^1.7.8",
-    "better-sqlite3": "^11.10.0",
     "dotenv": "^16.5.0",
     "node-cron": "3.0.3"
-  },
-  "main": "src/{index.js,functions/*.js}"
+  }
 }
